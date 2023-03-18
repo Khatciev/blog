@@ -18,8 +18,8 @@ export function buildPlugins({ paths }: BuildOptions): webpack.WebpackPluginInst
         new webpack.ProgressPlugin(),
         new webpack.DefinePlugin({
             __IS_DEV__: JSON.stringify(true)
-        })
-
+        }),
+        new webpack.HotModuleReplacementPlugin()
     ]
 
 }
