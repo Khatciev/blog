@@ -9,8 +9,6 @@ module.exports = {
         'airbnb',
         'plugin:i18next/recommended',
     ],
-    overrides: [
-    ],
     parser: '@typescript-eslint/parser',
     parserOptions: {
         ecmaFeatures: {
@@ -26,7 +24,10 @@ module.exports = {
     ],
     rules: {
         'linebreak-style': 0,
-        'i18next/no-literal-string': ['error', { markupOnly: true, ignoreAllAttributes: true }],
+        'i18next/no-literal-string': ['error', {
+            markupOnly: true,
+            ignoreAllAttributes: ['data-testid']
+        }],
         'react/jsx-indent': [2, 4],
         'react/jsx-indent-props': [2, 4],
         indent: [2, 4],
@@ -52,4 +53,12 @@ module.exports = {
     globals: {
         __IS_DEV__: true,
     },
+    overrides: [
+        {
+            files: ['**/src/**/*.test.{ts, tsx}'],
+            rules: {
+                'i18next/no-literal-string': 'off'
+            }
+        }
+    ]
 };
