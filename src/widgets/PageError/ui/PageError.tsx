@@ -5,6 +5,8 @@ import cls from './PageError.module.scss';
 
 interface PageErrorProps {
     className?: string;
+    // eslint-disable-next-line react/no-unused-prop-types
+    backgroundColor?: string;
 }
 
 export const PageError = ({ className }: PageErrorProps) => {

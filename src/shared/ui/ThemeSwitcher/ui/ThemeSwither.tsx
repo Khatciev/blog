@@ -1,5 +1,4 @@
 import { FC } from 'react';
-
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Theme, useTheme } from 'app/providers/ThemeProvider';
 import DarkIcon from 'shared/assets/icons/theme-dark.svg';
@@ -8,6 +7,8 @@ import { Button, ThemeButton } from 'shared/ui/Button/Button';
 
 interface ThemeSwitherProps {
     className?: string;
+    // eslint-disable-next-line react/no-unused-prop-types
+    backgroundColor?: string;
 }
 
 export const ThemeSwither: FC<ThemeSwitherProps> = ({ className }: ThemeSwitherProps) => {

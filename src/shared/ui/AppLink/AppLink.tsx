@@ -5,11 +5,13 @@ import cls from './AppLink.module.scss';
 
 export enum AppLickTheme {
     PRIMARY = 'primary',
-    SECONDARY = 'secondary'
+    SECONDARY = 'secondary',
+    RED = 'red',
 }
 interface AppLinkProps extends LinkProps {
     className?: string;
     theme?: AppLickTheme;
+    backgroundColor?: string;
 }
 
 export const AppLink: FC<AppLinkProps> = (props) => {

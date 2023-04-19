@@ -7,9 +7,11 @@ import cls from './Sidebar.module.scss';
 
 interface SidebarProps {
     className?: string;
+    // eslint-disable-next-line react/no-unused-prop-types
+    backgroundColor?: string;
 }
 
-export const Sidebar: FC<SidebarProps> = ({ className }) => {
+export const Sidebar = ({ className }: SidebarProps) => {
     const [collapsed, setCollapsed] = useState(false);
 
     const onToggleCollapsed = () => {

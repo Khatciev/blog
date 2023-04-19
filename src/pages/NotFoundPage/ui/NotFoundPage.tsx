@@ -4,6 +4,8 @@ import cls from './NotFoundPage.module.scss';
 
 interface NotFoundPageProps {
     className?: string;
+    // eslint-disable-next-line react/no-unused-prop-types
+    backgroundColor?: string;
 }
 
 export const NotFoundPage = ({ className }: NotFoundPageProps) => {
