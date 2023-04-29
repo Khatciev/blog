@@ -28,6 +28,7 @@ export var AppLickTheme;
 (function (AppLickTheme) {
     AppLickTheme["PRIMARY"] = "primary";
     AppLickTheme["SECONDARY"] = "secondary";
+    AppLickTheme["RED"] = "red";
 })(AppLickTheme || (AppLickTheme = {}));
 export var AppLink = function (props) {
     var to = props.to, className = props.className, children = props.children, _a = props.theme, theme = _a === void 0 ? AppLickTheme.PRIMARY : _a, otherProps = __rest(props, ["to", "className", "children", "theme"]);
