@@ -48,9 +48,9 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 import { jsx as _jsx } from "react/jsx-runtime";
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Button, ThemeButton } from 'shared/ui/Button/Button';
+import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 var LangSwitcher = function (_a) {
-    var className = _a.className;
+    var className = _a.className, short = _a.short;
     var _b = useTranslation(), t = _b.t, i18n = _b.i18n;
     var toggle = function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
@@ -58,6 +58,6 @@ var LangSwitcher = function (_a) {
             return [2 /*return*/];
         });
     }); };
-    return (_jsx(Button, __assign({ className: classNames('', {}, [className]), theme: ThemeButton.CLEAR, onClick: toggle }, { children: t('Язык') }), void 0));
+    return (_jsx(Button, __assign({ className: classNames('', {}, [className]), theme: ButtonTheme.CLEAR, onClick: toggle }, { children: t(short ? 'Короткий язык' : 'Язык') }), void 0));
 };
 export default LangSwitcher;

@@ -28,10 +28,33 @@ export const Clear: Story = {
     },
 };
 
+export const ClearInverted: Story = {
+    args: {
+        children: 'Text',
+        theme: ButtonTheme.CLEAR_INVERTED,
+    },
+};
+
 export const Outline: Story = {
     args: {
         children: 'Text',
         theme: ButtonTheme.OUTLINE,
+    },
+};
+
+export const OutlineSizeS: Story = {
+    args: {
+        children: 'Text',
+        theme: ButtonTheme.OUTLINE,
+        size: ButtonSize.S,
+    },
+};
+
+export const OutlineSizeM: Story = {
+    args: {
+        children: 'Text',
+        theme: ButtonTheme.OUTLINE,
+        size: ButtonSize.M,
     },
 };
 
@@ -50,6 +73,7 @@ export const OutlineSizeXL: Story = {
         size: ButtonSize.XL,
     },
 };
+
 export const OutlineDark: Story = {
     args: {
         children: 'Text',
@@ -77,15 +101,6 @@ export const Square: Story = {
         children: '>',
         theme: ButtonTheme.BACKGROUND_INVERTED,
         square: true,
-    },
-};
-
-export const SquareSizeM: Story = {
-    args: {
-        children: '>',
-        theme: ButtonTheme.BACKGROUND_INVERTED,
-        square: true,
-        size: ButtonSize.M,
     },
 };
 

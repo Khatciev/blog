@@ -23,13 +23,26 @@ var __rest = (this && this.__rest) || function (s, e) {
 import { jsx as _jsx } from "react/jsx-runtime";
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './Button.module.scss';
-export var ThemeButton;
-(function (ThemeButton) {
-    ThemeButton["CLEAR"] = "clear";
-    ThemeButton["OUTLINE"] = "outline";
-})(ThemeButton || (ThemeButton = {}));
+export var ButtonTheme;
+(function (ButtonTheme) {
+    ButtonTheme["CLEAR"] = "clear";
+    ButtonTheme["OUTLINE"] = "outline";
+    ButtonTheme["BACKGROUND"] = "background";
+    ButtonTheme["BACKGROUND_INVERTED"] = "backgroundInverted";
+})(ButtonTheme || (ButtonTheme = {}));
+export var ButtonSize;
+(function (ButtonSize) {
+    ButtonSize["M"] = "size_m";
+    ButtonSize["L"] = "size_l";
+    ButtonSize["XL"] = "size_xl";
+})(ButtonSize || (ButtonSize = {}));
 export var Button = function (props) {
     var _a;
-    var className = props.className, children = props.children, theme = props.theme, otherProps = __rest(props, ["className", "children", "theme"]);
-    return (_jsx("button", __assign({ type: "button", className: classNames(cls.Button, (_a = {}, _a[cls[theme]] = true, _a), [className]) }, otherProps, { children: children }), void 0));
+    var className = props.className, children = props.children, theme = props.theme, square = props.square, _b = props.size, size = _b === void 0 ? ButtonSize.M : _b, otherProps = __rest(props, ["className", "children", "theme", "square", "size"]);
+    var mods = (_a = {},
+        _a[cls[theme]] = true,
+        _a[cls.square] = true,
+        _a[cls[size]] = true,
+        _a);
+    return (_jsx("button", __assign({ type: "button", className: classNames(cls.Button, mods, [className]) }, otherProps, { children: children }), void 0));
 };
