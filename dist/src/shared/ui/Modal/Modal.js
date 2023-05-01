@@ -12,8 +12,6 @@ var __assign = (this && this.__assign) || function () {
 import { jsx as _jsx } from "react/jsx-runtime";
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useState, useRef, useEffect, useCallback, } from 'react';
-import { Portal } from 'shared/ui/Portal/Portal';
-import { useTheme } from 'app/providers/ThemeProvider';
 import cls from './Modal.module.scss';
 var ANIMATION_DELAY = 300;
 export var Modal = function (props) {
@@ -21,11 +19,9 @@ export var Modal = function (props) {
     var className = props.className, children = props.children, isOpen = props.isOpen, onClose = props.onClose;
     var _b = useState(false), isClosing = _b[0], setIsClosing = _b[1];
     var timerRef = useRef(null);
-    var theme = useTheme().theme;
     var mods = (_a = {},
         _a[cls.opened] = isOpen,
         _a[cls.isClosing] = isClosing,
-        _a[cls[theme]] = true,
         _a);
     var onCloseHandler = useCallback(function () {
         if (onClose) {
@@ -51,5 +47,5 @@ export var Modal = function (props) {
             window.removeEventListener('keydown', onKeyDown);
         };
     }, [isOpen, onKeyDown]);
-    return (_jsx(Portal, { children: _jsx("div", __assign({ className: classNames(cls.Modal, mods, [className]) }, { children: _jsx("div", __assign({ className: cls.overlay, onClick: onCloseHandler }, { children: _jsx("div", __assign({ className: cls.content, onClick: onContentClick }, { children: children }), void 0) }), void 0) }), void 0) }, void 0));
+    return (_jsx("div", __assign({ className: classNames(cls.Modal, mods, [className]) }, { children: _jsx("div", __assign({ className: cls.overlay, onClick: onCloseHandler }, { children: _jsx("div", __assign({ className: cls.content, onClick: onContentClick }, { children: children }), void 0) }), void 0) }), void 0));
 };
